@@ -57,12 +57,12 @@
         if (typeof(console) === 'undefined') {
             console = {}
             console.log = console.error = console.info = console.debug = console.warn = console.trace = console.dir = console.dirxml = console.group = console.groupEnd = console.time = console.timeEnd = console.assert = console.profile = function () {};
-        }        
-        
+        }
+
         // Sliding sidebars
         codiad.sidebars.init();
         var handleWidth = 10;
-        
+
         // Messages
         codiad.message.init();
 
@@ -97,6 +97,10 @@
             codiad.modal.load(400, 'components/editor/dialog.php?action=settings');
             codiad.modal.hideOverlay();
         });
+
+        if(codiad.terminal) {
+            codiad.terminal.open();
+        }
     });
 
 })(this, jQuery);
